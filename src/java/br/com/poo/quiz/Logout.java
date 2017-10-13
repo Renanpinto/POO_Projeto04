@@ -29,9 +29,11 @@ public class Logout extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("Logout");
 		HttpSession session = request.getSession(false);
-		// session.setAttribute("user", null);
-		session.removeAttribute("userr");
-		session.getMaxInactiveInterval();
+                //response.sendRedirect("index.html");
+		//Removendo "user"
+		session.removeAttribute("user");
+		session.invalidate();
+                session = request.getSession(false);
 	}
 }
 

@@ -13,7 +13,12 @@
     </head>
     <body>
         <h1>Quiz</h1>
+    <%
+        if(session.getAttribute("user")==null){
+            response.sendRedirect("index.html");
+        }
     
+    %>
 	</br>
 	</br>
 	<form action="Logout" method="post">
