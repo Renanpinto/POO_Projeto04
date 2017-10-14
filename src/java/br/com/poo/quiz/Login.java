@@ -35,14 +35,13 @@ public class Login extends HttpServlet {
 		String usuario = request.getParameter("usuario");
 		String senha = request.getParameter("senha");
 		if (usuario.equals("admin")) { //usuário = admin sem senha por enquanto
-			out.print("Welcome, " + usuario);
 			HttpSession session = request.getSession(true); // iniciando sessão
 			session.setAttribute("user", usuario);
 			response.sendRedirect("quiz.jsp");
 		} else {
-			RequestDispatcher rd = request.getRequestDispatcher("index.html");
+			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
 			out.println("<font color=red>Usuário ou senha incorretos.</font>");
 			rd.include(request, response);
-		} // TODO Auto-generated method stub // TODO Auto-generated method stub
+		} 
     }
 }

@@ -22,18 +22,19 @@ public class Logout extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("Logout");
-		HttpSession session = request.getSession(false);
-                //response.sendRedirect("index.html");
-		//Removendo "user"
-		session.removeAttribute("user");
-		session.invalidate();
-                session = request.getSession(false);
-	}
+    protected void doPost(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("Logout");
+        HttpSession session = request.getSession(false);
+        
+        //enviando para a tela de login
+        response.sendRedirect("home.jsp");
+        
+        //Removendo "user"
+        session.removeAttribute("user");
+        session.invalidate();
+        session = request.getSession(false);
+    }
 }
-

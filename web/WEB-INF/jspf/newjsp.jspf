@@ -1,0 +1,3 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<link rel="stylesheet" type="text/css" href="WEB-INF/assets/css/teste.css">
