@@ -6,7 +6,7 @@
 
 <!-- Footer -->
 <footer id="footer">
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <div class="row">
       <div class="col-md-12">
         <p class="text-center wow fadeIn">Copyright &copy - 2017 Projeto04 POO  | Desenvolvido por Grupo 004 </p>

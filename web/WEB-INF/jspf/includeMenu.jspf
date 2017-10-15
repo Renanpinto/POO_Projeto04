@@ -1,6 +1,6 @@
 <%@ page pageEncoding="UTF-8" %>
 
-<!-- Navbar -->
+<!-- Navbar
 <nav id="menu" class="navbar navbar-expand-lg transparent">
   <a class="navbar-brand img-brand" href="home.jsp"><img class="img-fluid" src=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,4 +17,14 @@
       </li>
     </ul>
   </div>
+</nav>-->
+
+<nav class="navbar-dark container-fluid bg-light" style="content: '';clear: both; display:table;" >
+    <div style="float:left;" >
+        <h1 class="display-4">Projeto Quizz</h1>
+    </div>
+    <div style="float:right; margin-top:10px;">
+        <a href="home.jsp"   class="btn btn-group-lg btn-lg"><h4>Ínicio</h4></a>
+        <a href="quiz.jsp"   class="btn btn-group-lg btn-lg"><h4>Quiz</h4></a>
+    </div>
 </nav>
