@@ -30,18 +30,18 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html");
+                response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		String usuario = request.getParameter("usuario");
 		String senha = request.getParameter("senha");
 		if (usuario.equals("admin")) { //usuário = admin sem senha por enquanto
 			HttpSession session = request.getSession(true); // iniciando sessão
 			session.setAttribute("user", usuario);
-			response.sendRedirect("quiz.jsp");
+			response.sendRedirect("home.jsp");
 		} else {
 			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
-			out.println("<font color=red>Usuário ou senha incorretos.</font>");
-			rd.include(request, response);
+			out.println("<script>alert('Usuário e/ou senha incorretos.')</script>");
+                        rd.include(request, response);
 		} 
     }
 }

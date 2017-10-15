@@ -1,15 +1,9 @@
-<%-- 
-    Document   : home.jsp
-    Created on : 14/10/2017, 10:13:56
-    Author     : Renan
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Projeto Quizz</title>
+        <title>Quizz</title>
         
         <!--INCLUDE CSS -->
         <%@include file="WEB-INF/jspf/includeCssMenu-footer.jspf" %>
@@ -20,11 +14,9 @@
         <!-- INCLUDE MENU -->
         <%@include file="WEB-INF/jspf/includeMenu.jspf" %>
         <!-- INCLUDE MENU END -->
-        
-        <%if(!(session.getAttribute("user")==null)){%>
+
         <button type="button" class="btn btn-primary btn-lg btn-block">INICIAR NOVO QUIZZ</button>
-        <%}%>
-            
+        
         <pre style="text-align: center">
 Essa home tem que apresentar:
     - Uma tabela com os 10 ultimos testes realizados; 
