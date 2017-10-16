@@ -22,7 +22,7 @@
         <!-- INCLUDE MENU END -->
         
         <%if(!(session.getAttribute("user")==null)){%>
-        <button type="button" class="btn btn-primary btn-lg btn-block">INICIAR NOVO QUIZZ</button>
+        <a href="quizz.jsp" class="btn btn-primary btn-lg btn-block">INICIAR NOVO QUIZZ</a>
         <%}%>
             
         <pre style="text-align: center">
