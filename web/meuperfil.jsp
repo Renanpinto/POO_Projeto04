@@ -21,7 +21,7 @@
         <!-- INCLUDE MENU END -->
         
     <%
-        ArrayList<Usuario> usuario = BancoUsuarios.getUsuarios();
+        
         if(session.getAttribute("user")==null){
             response.sendRedirect("home.jsp");
         }
@@ -34,9 +34,22 @@
     </pre>
     
     <form>
-        <table>
+        <table border="5">
+            <%for(Usuario usuario : BancoUsuarios.getUsuarios()){
+                if(usuario.getNmUsuario()=="Vitor"){
+                    for(Double pontuacao : usuario.getQtPontuacoesUsuario()){
+                    %>
+                    <tr>
+                        <th><p><%=pontuacao%></p></th>
+                    </tr>
+                    <%
+                    }
+                }
+            %>
             
-            
+                
+                
+            <%}%>
         </table>
     </form>
         

@@ -5,6 +5,7 @@
  */
 package br.com.poo.quiz;
 
+
 import java.util.ArrayList;
 
 /**
@@ -18,13 +19,38 @@ public class BancoUsuarios {
     public static ArrayList<Usuario> getUsuarios() {
         if(usuarios == null){
             usuarios = new ArrayList<>();
+            usuarios = setUsuarios();
             return usuarios;
         }
         return usuarios;
     }
 
-    public static void setUsuarios(ArrayList<Usuario> usuarios) {
-        BancoUsuarios.usuarios = usuarios;
+    public static ArrayList<Usuario> setUsuarios() {
+        Usuario vitor = new Usuario(
+        "Vitor",
+                "123",
+                0
+        );
+        usuarios.add(vitor);
+        Usuario Renan = new Usuario(
+        "Renan",
+                "123",
+                0
+        );
+        usuarios.add(Renan);
+        Usuario Victor = new Usuario(
+        "Victor",
+                "123",
+                0
+        );
+        usuarios.add(Victor);
+        Usuario Fabin = new Usuario(
+        "Fabin",
+                "123",
+                0
+        );
+        usuarios.add(Fabin);
+        return usuarios;
     }
     
     

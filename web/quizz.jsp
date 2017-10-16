@@ -24,7 +24,6 @@
 
 <%if(request.getParameter("finalizar") != null){
             int acertos = 0;
-            ArrayList<Usuario> bdusuario = BancoUsuarios.getUsuarios();
             for (Questao q : Quiz.getQuestoes()){
                 String resposta = request.getParameter(q.getPergunta());
                 if (resposta != null){
@@ -36,7 +35,9 @@
             
             Quiz.quantidade++;
             Quiz.soma+=(100.0*((double)acertos/10.0));
-            bdusuario.add(new Usuario("ze", "ze", 100.0*((double)acertos/10.0)));
+            for(Usuario usuario : BancoUsuarios.getUsuarios()){
+                usuario.setQtPontuacoesUsuario(100.0*((double)acertos/10.0));
+            }
             response.sendRedirect(request.getContextPath()+"/home.jsp");
         }%>
         <form>

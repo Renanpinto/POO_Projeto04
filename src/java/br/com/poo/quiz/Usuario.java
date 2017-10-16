@@ -6,6 +6,7 @@
 
 package br.com.poo.quiz;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,11 +17,14 @@ import java.util.List;
 public class Usuario {
     private String nmUsuario;
     private String nmSenhaUsuario;
-    public List<Double> qtPontuacoesUsuario;
+    public ArrayList<Double> qtPontuacoesUsuario;
 
     public Usuario(String nmUsuario, String nmSenhaUsuario, double pontuacao) {
         this.nmUsuario = nmUsuario;
         this.nmSenhaUsuario = nmSenhaUsuario;
+        if(qtPontuacoesUsuario == null){
+            qtPontuacoesUsuario = new ArrayList<>();
+        }
         this.qtPontuacoesUsuario.add(pontuacao);
     }
     
@@ -36,7 +40,7 @@ public class Usuario {
         return qtPontuacoesUsuario.get(qtPontuacoesUsuario.lastIndexOf(qtPontuacoesUsuario));
     }
 
-    public List<Double> getQtPontuacoesUsuario() {
+    public ArrayList<Double> getQtPontuacoesUsuario() {
         return qtPontuacoesUsuario;
     }
 
