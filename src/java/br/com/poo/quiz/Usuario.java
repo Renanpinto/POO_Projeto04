@@ -8,6 +8,7 @@ package br.com.poo.quiz;
 
 import java.util.List;
 
+
 /**
  * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
@@ -15,28 +16,32 @@ import java.util.List;
 public class Usuario {
     private String nmUsuario;
     private String nmSenhaUsuario;
-    private List<Double> qtPontuacaoUsuario;
-    private double qtUltimaPontuacaoUsuario;
+    public List<Double> qtPontuacoesUsuario;
 
-    public List<Double> getQtPontuacaoUsuario() {
-        return qtPontuacaoUsuario;
-    }
-
-    public void setQtPontuacaoUsuario(List<Double> qtPontuacaoUsuario) {
-        this.qtPontuacaoUsuario = qtPontuacaoUsuario;
+    public Usuario(String nmUsuario, String nmSenhaUsuario, double pontuacao) {
+        this.nmUsuario = nmUsuario;
+        this.nmSenhaUsuario = nmSenhaUsuario;
+        this.qtPontuacoesUsuario.add(pontuacao);
     }
     
-    public double CalculaMediaPontuacaoUsuario(int quantidadeQuizRespondidos){
+    public double CalculaMediaPontuacao(){
         double soma = 0;
-        for(Double pontuacao : qtPontuacaoUsuario){
+        for(Double pontuacao : qtPontuacoesUsuario){
             soma+=pontuacao;
         }
-        return soma/quantidadeQuizRespondidos;
+        return soma;
+    }
+    
+    public double RetornaUltimaPontuacao(){
+        return qtPontuacoesUsuario.get(qtPontuacoesUsuario.lastIndexOf(qtPontuacoesUsuario));
     }
 
-    public double getQtUltimaPontuacaoUsuario() {
-        //seleciona a posicao na lista da ultima pontuacao, e retorna a pontuacao da posicao selecionada (a ultima nesse caso)
-        return qtPontuacaoUsuario.get(qtPontuacaoUsuario.lastIndexOf(qtPontuacaoUsuario));
+    public List<Double> getQtPontuacoesUsuario() {
+        return qtPontuacoesUsuario;
+    }
+
+    public void setQtPontuacoesUsuario(double pontuacao) {
+        this.qtPontuacoesUsuario.add(pontuacao);
     }
 
     public String getNmUsuario() {
@@ -54,6 +59,5 @@ public class Usuario {
     public void setNmSenhaUsuario(String nmSenhaUsuario) {
         this.nmSenhaUsuario = nmSenhaUsuario;
     }
-
     
 }

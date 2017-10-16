@@ -1,6 +1,10 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.com.poo.quiz.Questao"%>
 <%@page import="br.com.poo.quiz.Quiz"%>
+<%@page import="br.com.poo.quiz.Usuario"%>
+<%@page import="br.com.poo.quiz.BancoUsuarios"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,6 +24,7 @@
 
 <%if(request.getParameter("finalizar") != null){
             int acertos = 0;
+            ArrayList<Usuario> bdusuario = BancoUsuarios.getUsuarios();
             for (Questao q : Quiz.getQuestoes()){
                 String resposta = request.getParameter(q.getPergunta());
                 if (resposta != null){
@@ -28,8 +33,10 @@
                     }
                 }
             }
+            
             Quiz.quantidade++;
             Quiz.soma+=(100.0*((double)acertos/10.0));
+            bdusuario.add(new Usuario("ze", "ze", 100.0*((double)acertos/10.0)));
             response.sendRedirect(request.getContextPath()+"/home.jsp");
         }%>
         <form>
