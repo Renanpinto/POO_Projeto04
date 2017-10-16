@@ -6,24 +6,37 @@
 
 package br.com.poo.quiz;
 
+import java.util.List;
+
 /**
  * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class Usuario {
-    private int cdUsuario;
     private String nmUsuario;
     private String nmSenhaUsuario;
-    private int qtPontuacaoUsuario;
-    private int qtMediaPontuacaoUsuario;
-    private int[] qtUltimaPontuacaoUsuario;
+    private List<Double> qtPontuacaoUsuario;
+    private double qtUltimaPontuacaoUsuario;
 
-    public int getCdUsuario() {
-        return cdUsuario;
+    public List<Double> getQtPontuacaoUsuario() {
+        return qtPontuacaoUsuario;
     }
 
-    public void setCdUsuario(int cdUsuario) {
-        this.cdUsuario = cdUsuario;
+    public void setQtPontuacaoUsuario(List<Double> qtPontuacaoUsuario) {
+        this.qtPontuacaoUsuario = qtPontuacaoUsuario;
+    }
+    
+    public double CalculaMediaPontuacaoUsuario(int quantidadeQuizRespondidos){
+        double soma = 0;
+        for(Double pontuacao : qtPontuacaoUsuario){
+            soma+=pontuacao;
+        }
+        return soma/quantidadeQuizRespondidos;
+    }
+
+    public double getQtUltimaPontuacaoUsuario() {
+        //seleciona a posicao na lista da ultima pontuacao, e retorna a pontuacao da posicao selecionada (a ultima nesse caso)
+        return qtPontuacaoUsuario.get(qtPontuacaoUsuario.lastIndexOf(qtPontuacaoUsuario));
     }
 
     public String getNmUsuario() {
@@ -42,29 +55,5 @@ public class Usuario {
         this.nmSenhaUsuario = nmSenhaUsuario;
     }
 
-    public int getQtPontuacaoUsuario() {
-        return qtPontuacaoUsuario;
-    }
-
-    public void setQtPontuacaoUsuario(int qtPontuacaoUsuario) {
-        this.qtPontuacaoUsuario = qtPontuacaoUsuario;
-    }
-
-    public int getQtMediaPontuacaoUsuario() {
-        return qtMediaPontuacaoUsuario;
-    }
-
-    public void setQtMediaPontuacaoUsuario(int qtMediaPontuacaoUsuario) {
-        this.qtMediaPontuacaoUsuario = qtMediaPontuacaoUsuario;
-    }
-
-    public int[] getQtUltimaPontuacaoUsuario() {
-        return qtUltimaPontuacaoUsuario;
-    }
-
-    public void setQtUltimaPontuacaoUsuario(int[] qtUltimaPontuacaoUsuario) {
-        this.qtUltimaPontuacaoUsuario = qtUltimaPontuacaoUsuario;
-    }
-    
     
 }
