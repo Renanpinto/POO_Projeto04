@@ -1,4 +1,3 @@
-
 package br.com.poo.quiz;
 
 public class Questao {
@@ -35,7 +34,5 @@ public class Questao {
     public void setAlternativas(String[] alternativas) {
         this.alternativas = alternativas;
     }
-    
-    
     
 }

@@ -1,7 +1,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@page import="br.com.poo.quiz.Login" %>
 
-<nav class="navbar-dark container-fluid bg-light" style="content: '';clear: both; display:table;" >
+<nav class="navbar-dark container-fluid bg-light" style=" content: '';clear: both; display:table;" >
     <div style="float:left;" >
         <h1 class="display-4">Projeto Quizz</h1>
     </div>
