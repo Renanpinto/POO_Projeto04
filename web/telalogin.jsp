@@ -6,8 +6,8 @@
         <title>Entrar</title>
         
         <!--INCLUDE CSS -->
-        <%@include file="WEB-INF/jspf/includeCssMenu-footer.jspf" %>
-        
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <!-- INCLUDE CSS END-->
     </head>
     <body>

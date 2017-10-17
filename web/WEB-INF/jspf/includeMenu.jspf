@@ -1,8 +1,10 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@page import="br.com.poo.quiz.Login" %>
 
-<nav class="navbar-dark container-fluid bg-light" style=" content: '';clear: both; display:table;" >
-    <div style="float:left;" >
+
+
+<nav id="menu" class="navbar-dark container-fluid bg-light"  >
+    <div class="brand"  >
         <h1 class="display-4">Projeto Quizz</h1>
     </div>
     <div style="float:right; margin-top:10px;">

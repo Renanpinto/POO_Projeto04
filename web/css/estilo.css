@@ -4,9 +4,20 @@
 */
 
 /* MENU - Nav */
+#menu{
+    content: '';
+    clear: both; 
+    display:table;
+  color: #00F;  
+}
+
+.brand{
+    float:left;
+}
 nav li{
   padding: 0px 10px;
 }
+
 nav li a{
   color: #1a1a1a;
   font-size: 18px;
@@ -26,9 +37,10 @@ nav li a:hover{
   transition: all .5s ease-in-out;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-.img-brand{
+.brand{
   max-height: 50px;
   transition: max-height .5s ease-in-out;
+  color: #00F;
 }
 .new-brand{
   max-height: 40px;
