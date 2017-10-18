@@ -8,6 +8,7 @@ public class Usuario {
     private String nmUsuario;
     private String nmSenhaUsuario;
     public ArrayList<Double> qtPontuacoesUsuario;
+    
 
     public Usuario(String nmUsuario, String nmSenhaUsuario, double mediaNota) {
         this.nmUsuario = nmUsuario;

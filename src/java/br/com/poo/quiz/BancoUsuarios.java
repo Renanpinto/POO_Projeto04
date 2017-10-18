@@ -16,6 +16,23 @@ public class BancoUsuarios {
     
     public static ArrayList<Usuario> usuarios;
     public static ArrayList<Usuario> QuizzesEfetuados;
+    public static ArrayList<Usuario> ranking;
+
+    public void setRanking(Usuario usuario) {
+        if(ranking == null){
+            ranking = new ArrayList<>();
+            ranking.add(usuario);
+        }
+        ranking.add(usuario);
+    }
+    
+    public static ArrayList<Usuario> getRanking() {
+        if(ranking == null){
+            ranking = new ArrayList<>();
+            
+        }
+        return ranking;
+    }
     
     public static ArrayList<Usuario> getUsuarios() {
         if(usuarios == null){
