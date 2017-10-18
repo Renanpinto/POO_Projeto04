@@ -21,9 +21,17 @@
         <%@include file="WEB-INF/jspf/includeMenu.jspf" %>
         <!-- INCLUDE MENU END -->
 
+        <%
+            if (session.getAttribute("user") == null) {
+                response.sendRedirect("telalogin.jsp");
+            }
+
+        %>
+
         <%if (!(session.getAttribute("user") == null)) {%>
         <a href="quizz.jsp" class="btn btn-primary btn-lg btn-block">INICIAR NOVO QUIZZ</a>
         <%}%>
+
 
         <pre style="text-align: center">
 Essa home tem que apresentar:

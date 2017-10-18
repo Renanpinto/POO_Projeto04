@@ -20,9 +20,10 @@
         <%@include file="WEB-INF/jspf/includeMenuPerfil.jspf" %>
         <!-- INCLUDE MENU END -->
         
+        
     <%
         if(session.getAttribute("user")==null){
-            response.sendRedirect("home.jsp");
+            response.sendRedirect("telalogin.jsp");
         }
     %>
     
