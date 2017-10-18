@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Quizz</title>
+        <title>Área do Usuário - <%= session.getAttribute("user")%></title>
 
         <!--INCLUDE CSS -->
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
@@ -21,13 +21,13 @@
         <%@include file="WEB-INF/jspf/includeMenu.jspf" %>
         <!-- INCLUDE MENU END -->
 
-        <%
-                if(session.getAttribute("user")==null){
-                    response.sendRedirect("telalogin.jsp");
-                }
-    
-        %>
-    
+        <%-- <%
+                 if(session.getAttribute("user")==null){
+                     response.sendRedirect("telalogin.jsp");
+                 }
+     
+         %>--%>
+
         <%int i = 0;
             if (request.getParameter("finalizar") != null) {
                 int acertos = 0;
@@ -38,22 +38,26 @@
                             acertos++;
                         }
                     }
-                }
+                }%>
 
-                Quiz.quantidade++;
-                Quiz.soma += (100.0 * ((double) acertos / 10.0));
-                for (Usuario usuario : BancoUsuarios.getUsuarios()) {
-                    usuario.setQtPontuacoesUsuario(100.0 * ((double) acertos / 10.0));
-                }
-                response.sendRedirect(request.getContextPath() + "/home.jsp");
-            }%>
+        <%-- Quiz.quantidade++;
+         Quiz.soma += (100.0 * ((double) acertos / 10.0));
+         for (Usuario usuario : BancoUsuarios.getUsuarios()) {
+             usuario.setQtPontuacoesUsuario(100.0 * ((double) acertos / 10.0));
+         }
+         response.sendRedirect(request.getContextPath() + "/home.jsp");--%>
+        <% Quiz quiz = new Quiz(10, acertos, String.valueOf(session.getAttribute("user")));
+                BancoUsuarios.addQuizEfetuado(quiz);
+                BancoUsuarios.atualizarMediaUser(String.valueOf(session.getAttribute("user")), acertos);
+                       response.sendRedirect(request.getContextPath() + "/home.jsp");
+                   }%>
         <div class="container">
             <br><br>
             <form>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <%for (Questao questao : Quiz.getQuestoes()) {%>
-                    <% ;
-                i++;%>
+                    <%
+                        i++;%>
 
                     <li class="nav-item">
                         <a class="nav-link " id="pills-home-tab" data-toggle="pill" href="#<%=i%>" role="tab" aria-controls="pills-home" aria-expanded="true"><%=i%></a>
@@ -65,7 +69,7 @@
 
                 <div class="tab-content" id="pills-tabContent">
                     <%for (Questao questao : Quiz.getQuestoes()) {
-                        i++;%>
+                            i++;%>
 
                     <div class="tab-pane fade show " id="<%=i%>" role="tabpanel" aria-labelledby="pills-home-tab">
                         <h4><%=questao.getPergunta()%></h4>
@@ -75,21 +79,31 @@
                         <%=questao.getAlternativas()[1]%><br>
                         <input type="radio" name="<%=questao.getPergunta()%>" value="<%=questao.getAlternativas()[2]%>">
                         <%=questao.getAlternativas()[2]%>
-                        
+                
                     </div>
 
 
-                    <%}%>
-                </div>
-                </ul>
-                <br><br>
 
+                    <%}%>
+
+                </div>
+                
+                <br><br>
+                <input type="hidden" name="usuarioTestado" value="<%=String.valueOf(session.getAttribute("user"))%>"/>
                 <input type="submit" name="finalizar" value="Finalizar"> 
             </form>
             <br><br>
 
         </div>
+        <script>
+            $('.btnNext').click(function () {
+                $('.nav-tabs > .active').next('li').find('a').trigger('click');
+            });
 
+            $('.btnPrevious').click(function () {
+                $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+            });
+        </script>
 
 
         <!-- INCLUDE FOOTER -->

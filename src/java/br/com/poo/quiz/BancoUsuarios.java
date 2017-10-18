@@ -15,45 +15,71 @@ import java.util.ArrayList;
 public class BancoUsuarios {
     
     public static ArrayList<Usuario> usuarios;
-
+    private static ArrayList<Quiz> QuizzesEfetuados;
     public static ArrayList<Usuario> getUsuarios() {
         if(usuarios == null){
             usuarios = new ArrayList<>();
-            return usuarios;
+            
         }
         return usuarios;
     }
+    
+    private static ArrayList<Quiz> getQuizzesEfetuados(){
+        if (QuizzesEfetuados == null){
+            QuizzesEfetuados = new ArrayList<>();
+        }
+        return QuizzesEfetuados;
+    }
 
     public static ArrayList<Usuario> setUsuarios(String nmUsuario, String nmSenhaUsuario) {
-//        Usuario vitor = new Usuario(
-//        "Vitor",
-//                "123",
-//                0
-//        );
-//        usuarios.add(vitor);
-//        Usuario Renan = new Usuario(
-//        "Renan",
-//                "123",
-//                0
-//        );
-//        usuarios.add(Renan);
-//        Usuario Victor = new Usuario(
-//        "Victor",
-//                "123",
-//                0
-//        );
-//        usuarios.add(Victor);
-//        Usuario Fabin = new Usuario(
-//        "Fabin",
-//                "123",
-//                0
-//        );
-//        usuarios.add(Fabin);
         Usuario newUser = new Usuario(nmUsuario,nmSenhaUsuario,0);
         usuarios.add(newUser);
         return usuarios;
     }
     
+    public static boolean atualizarMediaUser(String nomeUsuario, double acertosQuiz){
+        int i = 0;
+        for(Usuario u: BancoUsuarios.getUsuarios()){
+            if(u.getNmUsuario().equals(nomeUsuario)){
+                double mediaNota = 0;
+                if(u.getMediaNota() == 0){
+                    mediaNota = acertosQuiz;
+                }else{
+                    mediaNota = (u.getMediaNota() + acertosQuiz)/2;
+                }
+                u.setMediaNota(mediaNota);
+                BancoUsuarios.getUsuarios().remove(i);
+                BancoUsuarios.getUsuarios().add(i, u);
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
     
-    
+     public static double obterMediaUser(String nomeUser){
+        for(Usuario u : BancoUsuarios.getUsuarios()){
+           if(u.getNmUsuario().equals(nomeUser)){
+                return u.getMediaNota();
+           }
+        }
+        
+        return Usuario.getMediaNota();
+    }
+     public static boolean addQuizEfetuado(Quiz quiz){
+        BancoUsuarios.getQuizzesEfetuados().add(quiz);
+        return true;
+    }
+    public static Usuario getUser(int i){
+        return BancoUsuarios.getUsuarios().get(i);
+    }
+    public static int totalUsers(){
+        return BancoUsuarios.getUsuarios().size();
+    }
+    public static Quiz getQuizEfetuado(int i){
+        return BancoUsuarios.getQuizzesEfetuados().get(i);
+    }
+    public static int totalQuizzesEfetuados(){
+        return BancoUsuarios.getQuizzesEfetuados().size();
+    }
 }

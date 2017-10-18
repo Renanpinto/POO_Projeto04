@@ -8,14 +8,12 @@ public class Usuario {
     private String nmUsuario;
     private String nmSenhaUsuario;
     public ArrayList<Double> qtPontuacoesUsuario;
+    private static double mediaNota;
 
-    public Usuario(String nmUsuario, String nmSenhaUsuario, double pontuacao) {
+    public Usuario(String nmUsuario, String nmSenhaUsuario, double mediaNota) {
         this.nmUsuario = nmUsuario;
         this.nmSenhaUsuario = nmSenhaUsuario;
-        if(qtPontuacoesUsuario == null){
-            qtPontuacoesUsuario = new ArrayList<>();
-        }
-        this.qtPontuacoesUsuario.add(pontuacao);
+        this.mediaNota = mediaNota;
     }
     
     public double CalculaMediaPontuacao(){
@@ -54,4 +52,11 @@ public class Usuario {
         this.nmSenhaUsuario = nmSenhaUsuario;
     }
     
+     public static double getMediaNota() {
+        return mediaNota;
+    }
+
+    public void setMediaNota(double mediaNota) {
+        this.mediaNota = mediaNota;
+    }
 }
