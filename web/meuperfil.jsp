@@ -21,7 +21,6 @@
         <!-- INCLUDE MENU END -->
         
     <%
-        
         if(session.getAttribute("user")==null){
             response.sendRedirect("home.jsp");
         }
@@ -36,13 +35,14 @@
     <form>
         <table border="5">
             <%for(Usuario usuario : BancoUsuarios.getUsuarios()){
-                if(usuario.getNmUsuario()=="Vitor"){
+                if(usuario.getNmUsuario() == "Vitor"){
                     for(Double pontuacao : usuario.getQtPontuacoesUsuario()){
+                        if(pontuacao != usuario.qtPontuacoesUsuario.get(0)){
                     %>
                     <tr>
                         <th><p><%=pontuacao%></p></th>
                     </tr>
-                    <%
+                    <%}
                     }
                 }
             %>
