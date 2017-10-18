@@ -31,24 +31,21 @@ public class Login extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String usuario = request.getParameter("usuario");
 		String senha = request.getParameter("senha");
-                int teste = BancoUsuarios.getUsuarios().size();
-                if(teste==0){
+                if(BancoUsuarios.getUsuarios().size()==0){
                     RequestDispatcher rd = request.getRequestDispatcher("cadastro.jsp");
                     out.println("<script>alert('Nenhum usuário cadastrado.')</script>");
                     rd.include(request, response);
                 }else{
-                    for(int i = 0;i < teste;i++){
-                        Usuario user = BancoUsuarios.getUsuarios().get(i);
+                    for(Usuario user : BancoUsuarios.getUsuarios()){
                         if(usuario.equals(user.getNmUsuario())&&senha.equals(user.getNmSenhaUsuario())){	
                             HttpSession session = request.getSession(true); // iniciando sessão
                             session.setAttribute("user", usuario);
                             response.sendRedirect("home.jsp");
-                        } else {
-                            RequestDispatcher rd = request.getRequestDispatcher("telalogin.jsp");
-                            out.println("<script>alert('Usuário e/ou senha incorretos.')</script>");
-                            rd.include(request, response);
                         } 
                     }
+                    RequestDispatcher rd = request.getRequestDispatcher("telalogin.jsp");
+                    out.println("<script>alert('Usuário e/ou senha incorretos.')</script>");
+                    rd.include(request, response);
                 }
 
 //		if ((usuario.equals(user.getNmUsuario()))||(usuario.equals(user1.getNmUsuario()))||(usuario.equals(user2.getNmUsuario()))||(usuario.equals(user3.getNmUsuario()))) { //usuário = admin sem senha por enquanto
