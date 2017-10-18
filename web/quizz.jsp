@@ -70,13 +70,12 @@
                     <div class="tab-pane fade show " id="<%=i%>" role="tabpanel" aria-labelledby="pills-home-tab">
                         <h4><%=questao.getPergunta()%></h4>
                         <input type="radio" name="<%=questao.getPergunta()%>" value="<%=questao.getAlternativas()[0]%>">
-                        <%=questao.getAlternativas()[0]%>
+                        <%=questao.getAlternativas()[0]%><br>
                         <input type="radio" name="<%=questao.getPergunta()%>" value="<%=questao.getAlternativas()[1]%>">
-                        <%=questao.getAlternativas()[1]%>
+                        <%=questao.getAlternativas()[1]%><br>
                         <input type="radio" name="<%=questao.getPergunta()%>" value="<%=questao.getAlternativas()[2]%>">
                         <%=questao.getAlternativas()[2]%>
-                        <input type="radio" name="<%=questao.getPergunta()%>" value="<%=questao.getAlternativas()[3]%>">
-                        <%=questao.getAlternativas()[3]%>
+                        
                     </div>
 
 
