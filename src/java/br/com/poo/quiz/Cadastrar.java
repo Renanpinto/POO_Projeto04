@@ -8,6 +8,7 @@ package br.com.poo.quiz;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,10 +38,13 @@ public class Cadastrar extends HttpServlet{
                 
                 if(senha.equals(senha2)){
                     BancoUsuarios.setUsuarios(usuario, senha);
+                    RequestDispatcher rd = request.getRequestDispatcher("telalogin.jsp");
                     out.println("<script>alert('Cadastro Finalizado!')</script>");
-                    response.sendRedirect("telalogin.jsp");
+                    rd.include(request, response);
                 }else{
+                    RequestDispatcher rd = request.getRequestDispatcher("cadastro.jsp");
                     out.println("<script>alert('Senhas não correspondem!')</script>");
+                    rd.include(request, response);
                 }
     }
     

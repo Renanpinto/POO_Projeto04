@@ -16,9 +16,6 @@ import javax.servlet.http.HttpSession;
  */
 public class Login extends HttpServlet {
 
-    
-   
-
     /**
      * Handles the HTTP <code>POST</code> method.
      *
