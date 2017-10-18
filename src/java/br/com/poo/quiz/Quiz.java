@@ -13,82 +13,90 @@ public class Quiz {
     
     private static ArrayList<Questao> setQuestoes(){
         Questao primeiraQuestao = new Questao(
-        "1 - O que é, o que é, clara e salgada. Cabe em um olho e pesa uma tonelada?",
-                "Racionais - Jesus Chorou",
-                new String[] {"Seu pai", "Sua mae", "Seu tio", "Racionais - Jesus Chorou"}
+        "1 - O que é uma CLASSE?",
+                "Abstração das características relevantes de um grupo de coisas do mundo real",
+                new String[] {"Abstração das características irrelevantes de um grupo de coisas do mundo real.",
+                    "Abstração das características elegantes de um grupo de coisas do mundo real.",
+                  "Abstração das características relevantes de um grupo de coisas do mundo real",
+                  "Abstração das características relevantes de situações reais do mundo."}
         );
         questoes.add(primeiraQuestao);
-        Questao segundaQuestao =  new Questao(
-        "2 - Nosso suor sagrado, é bem mais belo que esse sangue amargo.",
-                "Legião Urbana - Tempo Perdido",
-                new String[] {"Seu pai", "Sua mae", "Seu tio", "Legião Urbana - Tempo Perdido"}
+       Questao segundaQuestao =  new Questao(
+        "2 - Um objeto pode representar:",
+                "Entidades físicas, conceituais e de software",
+                new String[] {"Somente entidades físicas (ex. aluno, carro)", 
+                    "Entidades físicas, conceituais e de software",
+                    "Somente entidades conceituais (ex. empréstimo, processo)"}
         );
         questoes.add(segundaQuestao);
+        
         Questao terceiraQuestao = new Questao(
-        "3 - Alguém te perguntou como é que foi seu dia?<br> Uma palavra amiga, uma notícia boa.<br> Isso faz falta no dia a dia...",
-                "Charlie Brown Jr. - Céu Azul",
-                new String[] {"Seu pai", "Sua mae", "Seu tio", "Charlie Brown Jr. - Céu Azul"}
+        "3 - Não é um dos princípios de orientação a objetos:",
+                "Tarefas não são realizadas por objetos por meio de requisição de serviços.",
+                new String[] {"Tarefas não são realizadas por objetos por meio de requisição de serviços.", 
+                    "Qualquer coisa do mundo pode ser um objeto",
+                    "Cada objeto é originado a partir de uma classe."}
         );
         questoes.add(terceiraQuestao);
+        
         Questao quartaQuestao = new Questao(
-        "4 - Mama, oh!<br>" +
-"Didn't mean to make you cry.<br>" +
-"If I'm not back again this time tomorrow,<br>" +
-"Carry on, carry on.",
-                "Queen - Bohemian Rhapsody",
-                new String[] {"Seu pai", "Sua mae", "Seu tio", "Queen - Bohemian Rhapsody"}
+        "4 - Um aluno chamado José Carlos do curso de Informática efetua matrícula nas disciplinas de Matemática, Física e Programação. Quais são os objetos da sentença?",
+                "José Carlos, Informática, Matemática, Física e Programação",
+                new String[] {"Aluno, curso, matrícula e disciplina", 
+                    "José Carlos, Informática, Matemática, Física e Programação", 
+                    "José Carlos, Informática e disciplinas"}
         );
         questoes.add(quartaQuestao);
         Questao quintaQuestao = new Questao(
-        "5 - Veja, olhe outra vez o rosto na multidão, a multidão é um monstro sem rosto e coração.",
-                "Racionais - Negro Drama",
-                new String[] {"Seu pai", "Sua mae", "Seu tio", "Racionais - Negro Drama"}
+        "5 - Em relação aos atributos, é correto dizer que:",
+                "São propriedades de uma classe que definem os valores possíveis para as instâncias das propriedades",
+                new String[] {"São propriedades de uma classe que definem os valores possíveis para as instâncias das propriedades",
+                    "Uma classe deve ter ao menos um atributo",
+                    "Atributos e operações são sinônimos"}
         );
         questoes.add(quintaQuestao);
+     
         Questao sextaQuestao = new Questao(
-        "6 - Disparo balas de canhão<br>" +
-"É inútil pois existe um grão-vizir<br>" +
-"Há tantas violetas velhas sem um colibri<br>" +
-"Queria usar, quem sabe, uma camisa de força ou de " +
-"vênus<br>" +
-"Mas não vou gozar de nós apenas um cigarro<br>" +
-"Nem vou lhe beijar, gastando assim o meu batom",
-                "",
-                new String[] {"Seu pai", "Sua mae", "Seu tio", "Zé Ramalho - Chão de Giz"}
+        "6 - Um dos criadores do termo \"Programação Orientada a Objetos\"",
+                "Alan Curtis Kay",
+                new String[] {"Kristen Kay", 
+                    "Alan Curtis Kay",
+                    "Dahl Kay"}
         );
         questoes.add(sextaQuestao);
+        
         Questao setimaQuestao = new Questao(
-        "7 - Eu descobri que azul é a cor da parede da casa de Deus, e não há mais ninguém como você e eu.",
-                "Charlie Brown - Lugar ao Sol",
-                new String[] {"Seu pai", "Sua mae", "Seu tio", "Charlie Brown - Lugar ao Sol"}
+        "7 - São atributos da Classe Professor:",
+                "nome, endereço, telefone.",
+                new String[] {"nome, endereço, telefone.",
+                    "nome, falar, cor, telefone.",
+                    "nome, lecionar, CPF, RG."}
         );
         questoes.add(setimaQuestao);
         Questao oitavaQuestao = new Questao(
-        "8 - We don't need no education <br>" +
-"We don't need no thought control",
-                "Pink Floyd - Another Brick In The Wall",
-                new String[] {"Seu pai", "Sua mae", "Seu tio", "Pink Floyd - Another Brick In The Wall"}
+        "8 - Marque a alternativa incorreta Em relação à definição de classe:",
+                "Classes não representam necessariamente um conjunto de objetos do mundo real, podem representar objetos de software",
+                new String[] {"Uma classe é uma coleção de objetos.", 
+                    "Classes não representam necessariamente um conjunto de objetos do mundo real, podem representar objetos de software",
+                    "Uma classe serve como template(modelo) para se criar objetos."}
         );
         questoes.add(oitavaQuestao);
+        
         Questao nonaQuestao = new Questao(
-        "9 - Longe do meu domínio<br>" +
-"Cê vai de mal a pior<br>" +
-"Vem que eu te ensino<br>" +
-"Como ser bem melhor...",
-                "Kid Abelha - Como eu quero",
-                new String[] {"Seu pai", "Sua mae", "Seu tio", "Kid Abelha - Como eu quero"}
+        "9 - Qual Linguagem não é orientada a objetos?",
+                "DELPHI",
+                new String[] {"SIMULA", 
+                    "SMALLTALK",
+                    "DELPHI"}
         );
         questoes.add(nonaQuestao);
+        
         Questao decimaQuestao = new Questao(
-        "10 - So, so you think you can tell\n" +
-"Heaven from Hell,<br>" +
-"Blue skys from pain.<br>" +
-"Can you tell a green field<br>" +
-"From a cold steel rail?<br>" +
-"A smile from a veil?<br>" +
-"Do you think you can tell?",
-                "Pink Floyd - Wish You Were Here",
-                new String[] {"Seu pai", "Sua mae", "Seu tio", "Pink Floyd - Wish You Were Here"}
+        "10 - O que é INSTÂNCIA?",
+                "O ato de a classe criar um novo objeto.",
+                new String[] {"O ato de a objeto criar um novo objeto.",
+                    "O ato de a classe criar um novo objeto.",
+                    "O ato de a classe criar uma nova classe."}
         );
         questoes.add(decimaQuestao);
         
