@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Entrar</title>
+        <title>Cadastrar</title>
         
         <!--INCLUDE CSS -->
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
@@ -17,8 +17,8 @@
         
         <div class="card border-secondary mb-3" style="max-width: 20rem;margin: 0 auto;margin-top: 100px;">
             <div class="card-body">
-                <h1 class="display-4 text-center">Login</h1>
-                <form action="Login" method="post">
+                <h1 class="display-4 text-center">Cadastro</h1>
+                <form action="Cadastrar" method="post">
                   <div class="form-group">
                     <label for="loginUsuario">Usuário</label>
                     <input type="text" name="usuario" class="form-control" id="loginUsuario" placeholder="Digite seu nome de usuário">
@@ -26,9 +26,9 @@
                   <div class="form-group">
                     <label for="loginSenha">Senha</label>
                     <input type="password" name="senha" class="form-control" id="loginSenha" placeholder="Digite sua senha">
+                    <input type="password" name="senha2" class="form-control" placeholder="Digite novamente sua senha">
                   </div>
-                    <a href="cadastro.jsp" class="btn btn-secondary btn-sm" >Cadastrar</a>
-                    <button type="submit" value="login" class="btn btn-primary btn-lg" style="width: 40%">Entrar</button>
+                  <button type="submit" value="cadastrar" class="btn btn-primary btn-lg" style="width: 100%">Cadastrar</button>
                 </form>
             </div>
         </div>
