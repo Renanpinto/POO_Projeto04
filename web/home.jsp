@@ -30,7 +30,8 @@
         <a href="quizz.jsp" class="btn btn-primary btn-lg btn-block">INICIAR NOVO QUIZZ</a>
         <%}%>
 
-
+        <div class="container">
+            <br><br>
          <div class="row">
                 <div class="col-md-6">
                     <div class="table-ranking">
@@ -71,8 +72,8 @@
                     </div>
                 </div>
             </div>  
-
-
+</div>
+                        <br><br>
         <!-- INCLUDE FOOTER -->
         <%@include file="WEB-INF/jspf/includeFooter.jspf" %>
         <!-- INCLUDE FOOTER END -->
