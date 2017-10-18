@@ -50,7 +50,7 @@
                     </tr>
                 </table>
             </div>-->
-
+                    <div class="container">
         <div class="row">
                 <div class="col-md-6">
                     <div class="table-ranking">
@@ -94,7 +94,7 @@
                     </div>
                 </div>
             </div> 
-
+</div>
 
         <!-- INCLUDE FOOTER -->
         <%@include file="WEB-INF/jspf/includeFooter.jspf" %>

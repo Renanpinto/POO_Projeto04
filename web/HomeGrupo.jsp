@@ -105,7 +105,7 @@
                     <div class="team-member">
                         <img class="img-fluid mx-auto rounded-circle" src="img/Fabin.jpg" alt="">
                         <h4>Fabio Araujo</h4>
-                        <p class="text-muted">RA: 12904816113019</p>
+                        <p class="text-muted">RA: 12904816113047</p>
                         <ul class="list-inline social-buttons">
                             <li class="list-inline-item">
                                 <a href="#">
@@ -129,7 +129,7 @@
                     <div class="team-member">
                         <img class="img-fluid mx-auto rounded-circle" src="img/Victor.jpg" alt="">
                         <h4>Victor Burghi</h4>
-                        <p class="text-muted">RA: 12904816113036</p>
+                        <p class="text-muted">RA: 12904816113042</p>
                         <ul class="list-inline social-buttons">
                             <li class="list-inline-item">
                                 <a href="http://github.com/renanpinto">
