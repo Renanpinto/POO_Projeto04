@@ -113,7 +113,7 @@ public class Quiz {
         );
         questoes.add(decimaQuestao);
         
-        //Collections.shuffle(questoes);
+        Collections.shuffle(questoes);
         return questoes;
         
     }
