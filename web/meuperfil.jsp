@@ -39,11 +39,18 @@
                 if(usuario.getNmUsuario() == "Vitor"){
                     for(Double pontuacao : usuario.getQtPontuacoesUsuario()){
                         if(pontuacao != usuario.qtPontuacoesUsuario.get(0)){
+                            if(usuario.getQtPontuacoesUsuario().size() > 1){
                     %>
                     <tr>
                         <th><p><%=pontuacao%></p></th>
                     </tr>
-                    <%}
+                    <%}     else{
+                                %><p>Não foram realizados nenhum teste.</p><%  
+                                break;
+                            }
+                        }
+                    
+                       
                     }
                 }
             %>
