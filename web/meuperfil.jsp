@@ -38,10 +38,10 @@
                 <table style="text-align: center" class="table table-hover table-responsive textCenter">
 
                     <tr><th>Média</th></tr>
-                            <%  int c = 1;
+                            <%--  int c = 1;
                                 for (int i = BancoUsuarios.totalQuizzesEfetuados() - 1; i >= 0; i--) {
                                     if (c <= 10) {
-                                        Quiz quiz = BancoUsuarios.getQuizEfetuado(i);
+                                        Usuario quiz = BancoUsuarios.getQuizEfetuado(i);
 
                                         if (quiz.getUsuarioTestado().equals(session.getAttribute("user"))) {
                             %>
@@ -51,45 +51,25 @@
                                 }
                             }
                         }
-                    %>
+                    --%>
                 </table>
             </div>
         
         <%  String color = "black";
-            double mediaGeral = BancoUsuarios.obterMediaUser(String.valueOf(session.getAttribute("user")));
-            out.print(mediaGeral);
+            double mediaGeral = BancoUsuarios.obterMediaUser(String.valueOf((session.getAttribute("user"))));
+//            out.print(mediaGeral);
+              //double mediaGeral = BancoUsuarios.getUsuarios().get(0).CalculaMediaPontuacao();
+             //double mediaGeral = 0;
+              
+              
 
-            if (mediaGeral > 0.0) {
+            //if (mediaGeral > 0.0) {
         %>
         <h3 class="textCenter">Sua média de todos os quizzes: <span class="span-media" ><%=mediaGeral%></span></h3>
-            <%} else {%>
-        <h3 class="textCenter">Não foi encontrado qualquer quiz realizado, vamos lá tentar fazer um !!!<br><br><a href='quiz.jsp' class="btn btn-colors">Quiz</a></h3>
-            <%}%>
+            <%--} else {%>
+        <h3 class="textCenter">Não foi encontrado qualquer quiz realizado, vamos lá tentar fazer um !!!<br><br><a href='quizz.jsp' class="btn btn-colors">Quiz</a></h3>
+            <%--}--%>
 
-        <%--   
-               <%for(Usuario usuario : BancoUsuarios.getUsuarios()){
-                   if(usuario.getNmUsuario() == session.getAttribute("user")){
-                       for(Double pontuacao : usuario.getQtPontuacoesUsuario()){
-                           if(pontuacao != usuario.qtPontuacoesUsuario.get(0)){
-                               if(usuario.getQtPontuacoesUsuario().size() > 1){
-                       %>
-                       <tr>
-                           <th><p><%=pontuacao%></p></th>
-                       </tr>
-                       <%}     else{
-                                   %><p>Não foram realizados nenhum teste.</p><%  
-                                   break;
-                               }
-                           }
-                       
-                          
-                       }
-                   }
-               %>
-               
-       jhgjhg            
-                   
-               <%}%>--%>
 
 
 

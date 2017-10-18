@@ -38,19 +38,13 @@
                             acertos++;
                         }
                     }
-                }%>
-
-        <%-- Quiz.quantidade++;
-         Quiz.soma += (100.0 * ((double) acertos / 10.0));
-         for (Usuario usuario : BancoUsuarios.getUsuarios()) {
-             usuario.setQtPontuacoesUsuario(100.0 * ((double) acertos / 10.0));
-         }
-         response.sendRedirect(request.getContextPath() + "/home.jsp");--%>
-        <% Quiz quiz = new Quiz(10, acertos, String.valueOf(session.getAttribute("user")));
-                BancoUsuarios.addQuizEfetuado(quiz);
-                BancoUsuarios.atualizarMediaUser(String.valueOf(session.getAttribute("user")), acertos);
-                       response.sendRedirect(request.getContextPath() + "/home.jsp");
-                   }%>
+                } 
+                Quiz.quantidade++;
+                Quiz.soma += (100.0 * ((double) acertos / 10.0));
+                BancoUsuarios.setNovaPontuacaoUsuario(String.valueOf(session.getAttribute("user")), acertos);
+                response.sendRedirect(request.getContextPath() +"/home.jsp");
+            }%>
+        
         <div class="container">
             <br><br>
             <form>

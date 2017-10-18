@@ -45,9 +45,9 @@
                                 String[] nomes = new String[BancoUsuarios.getUsuarios().size()];
                                 for (int i = 0; i < BancoUsuarios.getUsuarios().size(); i++) {
                                     Usuario user = BancoUsuarios.getUser(i);
-                                    Quiz quiz = BancoUsuarios.getQuizEfetuado(i);
-                                    notas[i] = quiz.getMedia();
-                                    nomes[i] = user.getNmUsuario();
+//                                    Quiz quiz = BancoUsuarios.getQuizEfetuado(i);
+//                                    notas[i] = quiz.getMedia();
+//                                    nomes[i] = user.getNmUsuario();
                                 }
                                 double doubleAux = 0;
                                 String stringAux;
@@ -80,18 +80,6 @@
                             <tr>
                                 <th scope="row" >Nome do jogador</th>
                                 <th>Média</th>
-                            </tr>
-                            <%int c = 1;
-                                for (int i = BancoUsuarios.totalQuizzesEfetuados() - 1; i >= 0; i--) {
-                                    if (c <= 10) {
-                                        Quiz quiz = BancoUsuarios.getQuizEfetuado(i);%>
-                            <tr>
-                                <td><%=quiz.getUsuarioTestado()%></td>
-                                <td><%=quiz.getMedia()%></td>
-                            </tr>
-                            <%c++;
-                                    }
-                                }%>
                         </table>
                     </div>
                 </div>

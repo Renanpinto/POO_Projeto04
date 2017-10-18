@@ -7,17 +7,16 @@ public class Quiz {
     public static int quantidade;
     public static double soma;
     private static ArrayList<Questao> questoes;
-    private String usuarioTestado;
-
-    public String getUsuarioTestado() {
-        return usuarioTestado;
-    }
-    
-    public Quiz(int quantidade, double soma, String usuarioTestado) {
-        Quiz.quantidade = quantidade;
-        Quiz.soma = soma;
-        this.usuarioTestado = usuarioTestado;
-    }
+//    private String usuarioTestado;
+//
+//    public String getUsuarioTestado() {
+//        return usuarioTestado;
+//    }
+//    
+//    public Quiz(int quantidade, double soma, String usuarioTestado) {
+//        Quiz.quantidade = quantidade;
+//        Quiz.soma = soma;
+//    }
     
     public static double getMedia(){
         return (soma / (double)quantidade)*10;
@@ -114,7 +113,7 @@ public class Quiz {
         );
         questoes.add(decimaQuestao);
         
-        Collections.shuffle(questoes);
+        //Collections.shuffle(questoes);
         return questoes;
         
     }
