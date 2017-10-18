@@ -15,6 +15,8 @@ public class Usuario {
     }
     
     public double CalculaMediaPontuacao(){
+        if(qtPontuacoesUsuario == null)
+            return 0;
         double soma = 0;
         for(Double pontuacao : qtPontuacoesUsuario){
             soma+=pontuacao;
