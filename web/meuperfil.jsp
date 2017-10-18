@@ -28,35 +28,31 @@
         %>
 
         <pre style="text-align: center">
-    Aqui vai mostrar: 
-    - Média do usuario: 
-    - Tabela com 10 ultimos teste dele
         </pre>
         
             <div style="text-align: center">
 
                 <table style="text-align: center" class="table table-hover table-responsive textCenter">
-
-                    <tr><th>Média</th></tr>
-                            <%--  int c = 1;
-                                for (int i = BancoUsuarios.totalQuizzesEfetuados() - 1; i >= 0; i--) {
-                                    if (c <= 10) {
-                                        Usuario quiz = BancoUsuarios.getQuizEfetuado(i);
-
-                                        if (quiz.getUsuarioTestado().equals(session.getAttribute("user"))) {
-                            %>
-                    <tr><td><%=quiz.getMedia()%></td></tr>
-                    <%
-                                    c++;
-                                }
-                            }
-                        }
-                    --%>
+                    <tr>
+                        <th><h2>Ultimas dez notas</h2></th>
+                    <% int contador = 0;
+                    for(Double pontuacao : BancoUsuarios.getListaPontuacoesUsuario(String.valueOf(session.getAttribute("user")))){
+                        contador++;
+                        if(contador>=10){break;}
+                        %>
+                        <td><h2><%=contador%> - <%=pontuacao%></h2></td>
+                        <%
+                    }
+                    
+                    
+                    
+                    %>
+                    </tr>
                 </table>
             </div>
         
         <%  String color = "black";
-            double mediaGeral = BancoUsuarios.obterMediaUser(String.valueOf((session.getAttribute("user"))));
+            double mediaGeral = BancoUsuarios.obterMediaUser(String.valueOf(session.getAttribute("user")));
 //            out.print(mediaGeral);
               //double mediaGeral = BancoUsuarios.getUsuarios().get(0).CalculaMediaPontuacao();
              //double mediaGeral = 0;

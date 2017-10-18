@@ -42,6 +42,7 @@
                 Quiz.quantidade++;
                 Quiz.soma += (100.0 * ((double) acertos / 10.0));
                 BancoUsuarios.setNovaPontuacaoUsuario(String.valueOf(session.getAttribute("user")), acertos);
+                
                 response.sendRedirect(request.getContextPath() +"/home.jsp");
             }%>
         
