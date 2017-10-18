@@ -58,6 +58,15 @@
                             <tr>
                                 <th scope="row" >Nome do jogador</th>
                                 <th>Média</th>
+                                </tr>
+                            <%
+                                for (Usuario usuario : BancoUsuarios.getRanking()) {%>
+                                <tr>
+                                
+                                <td><%=usuario.getNmUsuario()%></td>
+                                <td><%=usuario.getMaiorNota()%></td>
+                            </tr>
+                            <%}%>
                         </table>
                     </div>
                 </div>

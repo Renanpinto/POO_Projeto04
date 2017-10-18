@@ -1,6 +1,7 @@
 package br.com.poo.quiz;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -8,11 +9,24 @@ public class Usuario {
     private String nmUsuario;
     private String nmSenhaUsuario;
     public ArrayList<Double> qtPontuacoesUsuario;
+    private double maiorNota;
+    
     
 
     public Usuario(String nmUsuario, String nmSenhaUsuario, double mediaNota) {
         this.nmUsuario = nmUsuario;
         this.nmSenhaUsuario = nmSenhaUsuario;
+    }
+    
+    public void setMaiorNota(){
+        if(qtPontuacoesUsuario == null)
+            qtPontuacoesUsuario = new ArrayList<>();
+            
+        this.maiorNota = Collections.max(qtPontuacoesUsuario);
+    }
+    
+    public double getMaiorNota(){
+        return this.maiorNota;
     }
     
     public double CalculaMediaPontuacao(){
@@ -22,7 +36,7 @@ public class Usuario {
         for(Double pontuacao : qtPontuacoesUsuario){
             soma+=pontuacao;
         }
-        return soma;
+        return soma/qtPontuacoesUsuario.size();
     }
     
     public double RetornaUltimaPontuacao(){

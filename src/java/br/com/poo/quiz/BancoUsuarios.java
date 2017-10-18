@@ -7,6 +7,8 @@ package br.com.poo.quiz;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  *
@@ -17,8 +19,27 @@ public class BancoUsuarios {
     public static ArrayList<Usuario> usuarios;
     public static ArrayList<Usuario> QuizzesEfetuados;
     public static ArrayList<Usuario> ranking;
+    //victor.burghi@gmail.com
+    
+    public static ArrayList<Double> getListaPontuacoesUsuario(String usuario){
+        for (Usuario u : BancoUsuarios.getUsuarios()) {
+            if(u.getNmUsuario().equals(usuario))
+                return u.getQtPontuacoesUsuario();
+        }
+        return null;
+    }
+    
+    public static ArrayList<Usuario> retornaRankingOrdenado(){
+        Collections.sort(ranking, new Comparator<Usuario>(){
+        @Override
+        public int compare(Usuario usuario1, Usuario usuario2){
+            return Double.compare(usuario1.getMaiorNota(), usuario2.getMaiorNota());
+        }
+        });
+        return null;
+    }
 
-    public void setRanking(Usuario usuario) {
+    public static void setRanking(Usuario usuario) {
         if(ranking == null){
             ranking = new ArrayList<>();
             ranking.add(usuario);
@@ -29,7 +50,6 @@ public class BancoUsuarios {
     public static ArrayList<Usuario> getRanking() {
         if(ranking == null){
             ranking = new ArrayList<>();
-            
         }
         return ranking;
     }
@@ -37,7 +57,6 @@ public class BancoUsuarios {
     public static ArrayList<Usuario> getUsuarios() {
         if(usuarios == null){
             usuarios = new ArrayList<>();
-            
         }
         return usuarios;
     }
@@ -68,8 +87,11 @@ public class BancoUsuarios {
     
     public static void setNovaPontuacaoUsuario(String usuario, int acertos){
         for (Usuario u : BancoUsuarios.getUsuarios()) {
-            if(u.getNmUsuario().equals(usuario))
+            if(u.getNmUsuario().equals(usuario)){
                 u.setQtPontuacoesUsuario(100.0 * ((double) acertos / 10.0));
+                BancoUsuarios.setRanking(u);
+                u.setMaiorNota();
+            }
         }
     }
     
