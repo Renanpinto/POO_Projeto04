@@ -41,35 +41,13 @@
                                 <th>Média das Notas</th>
                             </tr>
                             <%
-                                double[] notas = new double[BancoUsuarios.getUsuarios().size()];
-                                String[] nomes = new String[BancoUsuarios.getUsuarios().size()];
-                                for (int i = 0; i < BancoUsuarios.getUsuarios().size(); i++) {
-                                    Usuario user = BancoUsuarios.getUser(i);
-//                                    Quiz quiz = BancoUsuarios.getQuizEfetuado(i);
-//                                    notas[i] = quiz.getMedia();
-//                                    nomes[i] = user.getNmUsuario();
-                                }
-                                double doubleAux = 0;
-                                String stringAux;
-                                for (int i = 0; i < BancoUsuarios.getUsuarios().size(); i++) {
-                                    for (int j = 0; j < BancoUsuarios.getUsuarios().size()-1; j++) {
-                                        if (notas[j] < notas[j + 1]) {
-                                            doubleAux = notas[j];
-                                            notas[j] = notas[j + 1];
-                                            notas[j + 1] = doubleAux;
-
-                                            stringAux = nomes[j];
-                                            nomes[j] = nomes[j + 1];
-                                            nomes[j + 1] = stringAux;
-                                        }
-                                    }
-                                }
-                                for (int i = 0; i < BancoUsuarios.getUsuarios().size(); i++) {%>
-                            <tr>
-                                <td><%=nomes[i]%></td>
-                                <td><%=notas[i]%></td>
+                                for (Usuario usuario : BancoUsuarios.getUsuarios()) {%>
+                                <tr>
+                                <%for(Double pontuacao : usuario.getQtPontuacoesUsuario()){%>
+                                <td><%=usuario.getNmUsuario()%></td>
+                                <td><%=usuario.RetornaUltimaPontuacao()%></td>
                             </tr>
-                            <%}%>
+                            <%}}%>
                         </table>
                     </div>
                 </div>

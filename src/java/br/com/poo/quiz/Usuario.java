@@ -25,7 +25,9 @@ public class Usuario {
     }
     
     public double RetornaUltimaPontuacao(){
-        return qtPontuacoesUsuario.get(qtPontuacoesUsuario.lastIndexOf(qtPontuacoesUsuario));
+        if(qtPontuacoesUsuario == null)
+            return 0;
+        return qtPontuacoesUsuario.lastIndexOf(qtPontuacoesUsuario);
     }
 
     public ArrayList<Double> getQtPontuacoesUsuario() {
