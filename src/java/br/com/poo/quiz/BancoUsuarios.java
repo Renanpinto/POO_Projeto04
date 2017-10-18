@@ -25,30 +25,30 @@ public class BancoUsuarios {
     }
 
     public static ArrayList<Usuario> setUsuarios(String nmUsuario, String nmSenhaUsuario) {
-        Usuario vitor = new Usuario(
-        "Vitor",
-                "123",
-                0
-        );
-        usuarios.add(vitor);
-        Usuario Renan = new Usuario(
-        "Renan",
-                "123",
-                0
-        );
-        usuarios.add(Renan);
-        Usuario Victor = new Usuario(
-        "Victor",
-                "123",
-                0
-        );
-        usuarios.add(Victor);
-        Usuario Fabin = new Usuario(
-        "Fabin",
-                "123",
-                0
-        );
-        usuarios.add(Fabin);
+//        Usuario vitor = new Usuario(
+//        "Vitor",
+//                "123",
+//                0
+//        );
+//        usuarios.add(vitor);
+//        Usuario Renan = new Usuario(
+//        "Renan",
+//                "123",
+//                0
+//        );
+//        usuarios.add(Renan);
+//        Usuario Victor = new Usuario(
+//        "Victor",
+//                "123",
+//                0
+//        );
+//        usuarios.add(Victor);
+//        Usuario Fabin = new Usuario(
+//        "Fabin",
+//                "123",
+//                0
+//        );
+//        usuarios.add(Fabin);
         Usuario newUser = new Usuario(nmUsuario,nmSenhaUsuario,0);
         usuarios.add(newUser);
         return usuarios;

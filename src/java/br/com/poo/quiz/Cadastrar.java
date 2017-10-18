@@ -39,6 +39,7 @@ public class Cadastrar extends HttpServlet{
 		String senha2 = request.getParameter("senha2");
                 
                 if(senha.equals(senha2)){
+                    BancoUsuarios.getUsuarios();
                     BancoUsuarios.setUsuarios(usuario, senha);
                     RequestDispatcher rd = request.getRequestDispatcher("telalogin.jsp");
                     out.println("<script>alert('Cadastro Finalizado!')</script>");
