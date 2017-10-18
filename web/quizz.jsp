@@ -21,7 +21,13 @@
         <%@include file="WEB-INF/jspf/includeMenu.jspf" %>
         <!-- INCLUDE MENU END -->
 
-
+        <%
+                if(session.getAttribute("user")==null){
+                    response.sendRedirect("telalogin.jsp");
+                }
+    
+        %>
+    
         <%int i = 0;
             if (request.getParameter("finalizar") != null) {
                 int acertos = 0;
