@@ -31,6 +31,10 @@ public class Usuario {
     }
 
     public ArrayList<Double> getQtPontuacoesUsuario() {
+        if(qtPontuacoesUsuario == null){
+            qtPontuacoesUsuario = new ArrayList<>();
+            return qtPontuacoesUsuario;
+        }
         return qtPontuacoesUsuario;
     }
 

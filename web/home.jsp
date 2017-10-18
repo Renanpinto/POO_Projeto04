@@ -34,7 +34,7 @@
          <div class="row">
                 <div class="col-md-6">
                     <div class="table-ranking">
-                        <h2 class="text-center ">Ranking</h2><hr class='bottom-line3'><br><br>
+                        <h2 class="text-center ">Média das Notas</h2><hr class='bottom-line3'><br><br>
                         <table class="table table-hover table-responsive">
                             <tr>
                                 <th scope="row">Nome do jogador</th>
@@ -43,17 +43,17 @@
                             <%
                                 for (Usuario usuario : BancoUsuarios.getUsuarios()) {%>
                                 <tr>
-                                <%for(Double pontuacao : usuario.getQtPontuacoesUsuario()){%>
+                                
                                 <td><%=usuario.getNmUsuario()%></td>
-                                <td><%=usuario.RetornaUltimaPontuacao()%></td>
+                                <td><%=usuario.CalculaMediaPontuacao()%></td>
                             </tr>
-                            <%}}%>
+                            <%}%>
                         </table>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div id="table2">
-                        <h2 class="text-center ">Quizzes Efetuados</h2><hr class='bottom-line3'><br><br>
+                        <h2 class="text-center ">Ranking</h2><hr class='bottom-line3'><br><br>
                         <table class="table table-hover table-responsive">
                             <tr>
                                 <th scope="row" >Nome do jogador</th>
