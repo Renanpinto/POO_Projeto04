@@ -29,9 +29,9 @@
 
         <!--CABEÇALHO-->
         <header >
-            <div class="container">
-                <div class="titulo">Vamos Jogar?</div>
-                <div> <a href="telalogin.jsp"   class="btn btn-success btn-group-lg btn-lg"><h4>Jogar</h4></a></div>
+            <div class="container-fluid">
+                <div class="display-1 alert alert-secondary" role="alert">Vamos Jogar?</div>
+                <div> <a href="telalogin.jsp"   class="btn btn-success btn-group-lg btn-lg"><h4>Iniciar Quizz</h4></a></div>
 
             </div>
         </div>
