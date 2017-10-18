@@ -38,6 +38,17 @@ public class BancoUsuarios {
         return usuarios;
     }
     
+    public static int getQuantidadeQuizzesEfetuados(String usuario){
+        for (Usuario u : BancoUsuarios.getUsuarios()) {
+            if(u.getNmUsuario().equals(usuario))
+                if(u.qtPontuacoesUsuario == null)
+                    return 0;
+                else
+                    return u.qtPontuacoesUsuario.size();
+        }
+        return 0;
+    }
+    
     public static void setNovaPontuacaoUsuario(String usuario, int acertos){
         for (Usuario u : BancoUsuarios.getUsuarios()) {
             if(u.getNmUsuario().equals(usuario))

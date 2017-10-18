@@ -63,12 +63,12 @@
               
               
 
-            //if (mediaGeral > 0.0) {
+            if (BancoUsuarios.getQuantidadeQuizzesEfetuados(String.valueOf(session.getAttribute("user"))) != 0) {
         %>
         <h3 class="textCenter">Sua média de todos os quizzes: <span class="span-media" ><%=mediaGeral%></span></h3>
-            <%--} else {%>
+            <%} else {%>
         <h3 class="textCenter">Não foi encontrado qualquer quiz realizado, vamos lá tentar fazer um !!!<br><br><a href='quizz.jsp' class="btn btn-colors">Quiz</a></h3>
-            <%--}--%>
+            <%}%>
 
 
 
